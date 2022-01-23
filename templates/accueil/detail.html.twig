@@ -1,0 +1,83 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des livres{% endblock %}
+
+
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+.titre{
+font-size:4em;
+font-weight: bold;
+font-family: Arial, Helvetica, sans-serif;
+}  
+  .box{
+       border-style: solid;
+       border-color:rgba(247, 247, 247, 0.89);
+       border-radius: 10px;
+       background-color:rgba(247, 247, 247, 0.89);
+        box-shadow: 8px 8px 5px #444;
+       padding: 8px 12px;
+   }
+.Soustitre{
+font-weight: bold;
+font-family: Arial, Helvetica, sans-serif;
+} 
+.image{
+max-width:100% !important;
+max-height:380px !important;
+min-width:100% !important;
+min-height:380px !important;
+} 
+ body {
+  background-image: url({{asset('images/booklab.jpg')}});
+  background-position: center;
+    background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+</style>
+</div >
+<div class="container mt-5">
+<div class="row">
+<div class="col" style="max-width:450px !important ;">
+  <figure class="figure">
+  <img src="{{ asset(livre.getImage()) }}"  class="figure-img  rounded image" alt="{{livre.getTitre()}}">
+  <figcaption class="figure-caption text-end">{{livre.getTitre()}}</figcaption>
+</figure>
+</div>
+<div class="col">
+<div class="box" >
+<p class="titre" >{{livre.getTitre()}}</p>
+<p >description :{{livre.getDescription()}}</p>
+<p><span class="Soustitre">Note :</span>{{livre.getNote()}}</p>
+<p><span class="Soustitre">Date de parution :</span>{{livre.getDateDeParution()|date('d-m-Y')}}</p>
+<p>{{livre.getNombrePages()}} pages</p> 
+<p>Genre(s) :</p>
+ <ul>
+  {% for genre in livre.getGenres() %}
+   <li>{{genre.getNom()}}</li>
+ {% endfor %}
+ </ul>
+ <p>Auteur(s) :</p>
+
+  {% for auteur in livre.getAuteurs() %}
+
+  <span style="margin-top:10px;">
+    <img class="rounded-circle" alt="100x100" style="max-width:40px !important ;min-width:40px !important ;max-height:40px !important ;min-height:40px !important ;" src="{{ asset(auteur.getPhoto()) }}" data-holder-rendered="true">
+  <bold> {{auteur.getNomprenom()}}</bold>
+   </span>
+   <br>
+  {% endfor %}
+  
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+{% endblock %}

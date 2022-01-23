@@ -1,0 +1,48 @@
+/* les classe qui concernent le navbar */
+.sticky{
+    position: sticky;
+    top: 0px;
+    z-index: 7;
+  }
+          a > span:first-child{
+    font-family: fantasy;
+    font-weight: normal;
+    color: rgb(41, 103, 236);
+    font-size: xx-large;
+  }
+  a span {
+font-family: fantasy;
+    font-weight: bold;
+    color: rgb(169, 171, 182);
+    font-size: xx-large;
+  }
+/* les classe qui sert a animer la carte */
+.card-btn{
+    color: rgb(252, 252, 252) !important ;
+    background-color: none;
+    margin: auto !important ;
+    display: inline;
+  }
+  .card-style{
+    background-color: rgb(5, 2, 7) !important ;
+    border-color:white  !important ;
+    border-width: 1px !important ;
+    color: white !important ;
+    transition: 1s ease;
+  }
+  .card-style:hover{
+   background-color: rgb(70, 65, 73) !important ;
+  }
+
+  .card-image{
+    width: 94% !important;
+    margin: auto;
+    margin-top: 3% !important;
+  }
+ 
+/* detail book */
+body{
+  background-color: rebeccapurple;
+}
+
+
